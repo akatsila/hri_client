@@ -1,0 +1,22 @@
+<!-- Launch File -->
+<launch>
+
+  <group ns="ROBOTNAME">
+  
+    <node name="RosAria" pkg="rosaria" type="RosAria" respawn="false" output="log">
+      <param name="port" value="/dev/ttyUSB1" />
+    </node>
+    
+    <node name="soundplay_node" pkg="sound_play" type="soundplay_node.py" respawn="false" output="log"/>
+
+    <node name="hri_client_node" pkg="hri_client" type="hri_client_node" respawn="false" output="screen">
+      <param name="visca_camera_path"        value="/dev/ttyUSB0" />
+      <param name="visca_feedback_rate"      value="5.0" />
+      <param name="orientation_control_rate" value="5.0" />
+      <param name="max_rotational_speed"     value="0.52" /> #rad/sec - about 30 degrees/sec
+      <param name="gain_rotational_speed"    value="1.0" />
+    </node>
+
+  </group>
+
+</launch>

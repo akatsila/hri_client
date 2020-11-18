@@ -1,0 +1,3 @@
+[submodule "ThirdParty/libVISCA2"]
+	path = ThirdParty/libVISCA2
+	url = https://github.com/mkoppanen/libVISCA2
